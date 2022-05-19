@@ -20,7 +20,7 @@ class Player:
 
     Methods:
     userAction - user choice is saved in userChoice
-    pcAction - py chioce is saved in pcChoice
+    pcAction - pc chioce is saved in pcChoice
     """
 
     def __init__(self, name, score):
