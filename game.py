@@ -46,7 +46,7 @@ class Player:
             else:
                 print("Please, type a valid nember")
                 continue
-        # Print what user chose
+        # Print what user chose and print it
         if userChoice == 1:
             print("You chose rock!")
         elif userChoice == 2:
@@ -67,7 +67,7 @@ class Player:
         elif pcChoice == 3:
             print("PC chose scissors!")
 
-    # Add 1 to Player.score
+    # Add 1 point to Player.score
     def win(self):
         self.score += 1
 
