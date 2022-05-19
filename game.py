@@ -1,12 +1,26 @@
+#!/usr/bin/env python3
+
+"""
+Play rock, paper, scissors against the PC in your terminal.
+"""
 import random
 
 
 class Player:
     """
     One Player is user, another is pc
+    
     1 - Rock
     2 - Paper
     3 - Scissors
+
+    Attributes:
+    name - user choose name in the beggining of the game, pc name is PC
+    score - points from won games
+
+    Methods:
+    userAction - user choice is saved in userChoice
+    pcAction - py chioce is saved in pcChoice
     """
 
     def __init__(self, name, score):
@@ -40,10 +54,10 @@ class Player:
         elif userChoice == 3:
             print("You chose scissors!")
 
-    # Define what PC choses
+    # Define what PC chooses
     def pcAction(self):
         global pcChoice
-        # pc chooses by random module number 1 - 3
+        # pc chooses by random module number 1, 2 or 3
         pcChoice = random.randint(1,3)
 
         if pcChoice == 1:
