@@ -9,7 +9,7 @@ import random
 class Player:
     """
     One Player is user, another is pc
-    
+
     1 - Rock
     2 - Paper
     3 - Scissors
@@ -26,12 +26,14 @@ class Player:
     def __init__(self, name, score):
         self.name = name
         self.score = score
-    
+
     # Define what user chooses and print it
     def userAction(self):
         global userChoice
         while True:
-            userChoice = input(f"{user.name} what is your choice?\n 1 - Rock\n 2 - Paper\n 3 - Scissors\n")
+            userChoice = input(
+                f"{user.name} what is your choice?\n 1 - Rock\n 2 - Paper\n 3 - Scissors\n"
+            )
             # Incorrect input handling
             # Is the input a number?
             try:
@@ -58,7 +60,7 @@ class Player:
     def pcAction(self):
         global pcChoice
         # pc chooses by random module number 1, 2 or 3
-        pcChoice = random.randint(1,3)
+        pcChoice = random.randint(1, 3)
 
         if pcChoice == 1:
             print("PC chose rock!")
@@ -92,6 +94,7 @@ def playAgain():
 
     return again
 
+
 # Creat the user from Player class
 user = Player(input("Hello! What is your name?\n"), 0)
 # Creat the pc from Player class
@@ -107,33 +110,33 @@ while True:
     # Logic of the game - who wins?
     if pcChoice == userChoice:
         print("It is a tie!\n")
-    elif userChoice == 1: # Rock
-        if pcChoice == 2: # Paper
+    elif userChoice == 1:  # Rock
+        if pcChoice == 2:  # Paper
             print("Paper covers rock! You lose!\n")
             pc.win()
-        elif pcChoice == 3: # Scissors
+        elif pcChoice == 3:  # Scissors
             print("Rock beats scissors! You win!\n")
             user.win()
-    elif userChoice == 2: # Paper
-        if pcChoice == 1: # Rock
+    elif userChoice == 2:  # Paper
+        if pcChoice == 1:  # Rock
             print("Paper covers rock! You win!\n")
             user.win()
-        elif pcChoice == 3: # Scissors
+        elif pcChoice == 3:  # Scissors
             print("Scissors cuts paper! You lose!\n")
             pc.win()
-    elif userChoice == 3: # Scissors
-        if pcChoice == 1: # Rock
+    elif userChoice == 3:  # Scissors
+        if pcChoice == 1:  # Rock
             print("Rock beats scissors! You lose!\n")
             pc.win()
-        elif pcChoice == 2: # Paper
+        elif pcChoice == 2:  # Paper
             print("Scissors cuts paper! You win!\n")
             user.win()
-    
+
     # Print the score
     print("Score is:")
     print(f"{user.name} = {user.score}")
     print(f"{pc.name} = {pc.score}\n")
-    
+
     # Does the user want to play again?
     again = playAgain()
     if again == 1:
